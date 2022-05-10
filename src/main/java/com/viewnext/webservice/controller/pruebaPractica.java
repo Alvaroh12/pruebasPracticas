@@ -16,7 +16,7 @@ public class pruebaPractica {
 	
 	public Book hello(@PathVariable String parameter) {
 		
-		Book book = new Book(parameter, "prueba4");
+		Book book = new Book(parameter, "pruebaReal");
 		
 		return book;
 	}
