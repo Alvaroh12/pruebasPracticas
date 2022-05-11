@@ -1,12 +1,12 @@
 package com.viewnext.webservice.controller;
 
-import java.awt.print.Book;
-
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.viewnext.webservice.controller.Book;
+
 
 @RestController()
 @RequestMapping("hello")
@@ -16,38 +16,8 @@ public class pruebaPractica {
 	
 	public Book hello(@PathVariable String parameter) {
 		
-		Book book = new Book(parameter, "pruebaReal");
+		Book book = new Book(parameter, "prueba");
 		
 		return book;
-	}
-	
-	public class Book{
-		
-		private String book;
-		private String other;
-		
-		public Book(String book, String other) {
-			this.book = book;
-			this.other = other;
-		}
-		
-		public String getBook() {
-			return book;
-		}
-		
-		public void setBook(String book) {
-			this.book = book;
-		}
-		
-		public String getOther() {
-			return other;
-		}
-		
-		public void setOther(String other) {
-			this.other = other;
-		}
-		
-		
-		
 	}
 }
