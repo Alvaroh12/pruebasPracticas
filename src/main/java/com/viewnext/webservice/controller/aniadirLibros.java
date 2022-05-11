@@ -73,9 +73,7 @@ public ArrayList<Book> aniadir(@RequestBody String parameter) {
 			for (int i = 0; i < listaLibros.size(); i++) {
 				if (id.equals(listaLibros.get(i).getid())) {
 					listaLibros.remove(i);
-				} else {
-
-				}
+				} 
 			}
 			
 			return listaLibros;
