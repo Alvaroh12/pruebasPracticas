@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.viewnext.webservice.controller.Book;
 
 @RestController()
-@RequestMapping("testing")
-public class CRUD {
+@RequestMapping("libro")
+public class controladorLibro {
 
 	ArrayList <Book> listaLibros = new ArrayList<Book>();
 	int cont = 0;
 	
-	@PostMapping(value = "/aniadirLibro", produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ArrayList<Book> aniadir (@RequestBody String parameter){
 
 		Book book = new Book(parameter, cont+"");
@@ -31,12 +31,12 @@ public class CRUD {
 		return listaLibros;
 	}
 	
-	@GetMapping(value = "/listarLibros", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ArrayList<Book> listar (){
 		return listaLibros;
 	}
 	
-	@GetMapping(value = "/{parameter}/listarLibroId", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/{parameter}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ArrayList<Book> listarId(@PathVariable String parameter){
 		
 		ArrayList<Book> listar = new ArrayList<>();
@@ -49,7 +49,7 @@ public class CRUD {
 		return listar;
 	}
 	
-	@DeleteMapping(value = "/{id}/eliminarLibro", produces = MediaType.APPLICATION_JSON_VALUE)
+	@DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ArrayList<Book> borrar(@PathVariable String id) {
 		
 		for (int i = 0; i < listaLibros.size(); i++) {
@@ -62,7 +62,7 @@ public class CRUD {
 		}
 	
 	
-	@PutMapping(value = "/{id}/modificarLibro", produces = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ArrayList<Book> modificar(@PathVariable String id, @RequestBody String parameter) {
 		
 		for (int i = 0; i < listaLibros.size(); i++) {
