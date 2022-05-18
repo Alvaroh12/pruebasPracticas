@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.viewnext.webservice.controller.Book;
+import com.viewnext.webservice.modelo.Book;
 
 @Component("booksComponents")
 public class booksComponents {
