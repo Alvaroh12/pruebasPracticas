@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.viewnext.webservice.interfaces.BookInterface;
 import com.viewnext.webservice.modelo.Book;
+import com.viewnext.webservice.modelo.BookModeloDAO;
 
 @Repository
 public class BookDAO implements BookInterface{
@@ -21,17 +22,18 @@ public class BookDAO implements BookInterface{
 		List<Map<String, Object>> list = template.queryForList("SELECT * FROM libro");
 		return list;
 	}
+	
 
 	@Override
-	public List<Map<String, Object>> listar(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Map<String, Object>> listar(String id) {
+		List<Map<String, Object>> list = template.queryForList("select * from libro where id=?", id);
+		return list;
 	}
 
 	@Override
-	public int add(Book p) {
-		String sql = "insert into libro (id,book)values(?,?)";
-		return template.update(sql, p.getId(), p.getBook());
+	public int add(Book b) {
+		String sql = "insert into libro (id,book,descripcion)values(?,?,?)";
+		return template.update(sql, b.getId(), b.getBook(), b.getDescripcion());
 	}
 
 	@Override

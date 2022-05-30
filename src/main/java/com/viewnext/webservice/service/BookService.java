@@ -22,20 +22,17 @@ public class BookService implements BookInterface{
 	}
 
 	@Override
-	public List<Map<String, Object>> listar(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Map<String, Object>> listar(String id) {
+		return dao.listar(id);
 	}
 
 	@Override
 	public int add(Book b) {
-		// TODO Auto-generated method stub
 		return dao.add(b);
 	}
 
 	@Override
 	public int edit (Book b) {
-		// TODO Auto-generated method stub
 		return dao.edit(b);
 	}
 
